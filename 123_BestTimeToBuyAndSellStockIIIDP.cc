@@ -22,3 +22,4 @@ public:
         return g[n - 1][2];
     }
 };
+
