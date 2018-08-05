@@ -1,3 +1,26 @@
+cclass Solution {
+public:
+
+    int maxRotateFunction(vector<int>& A) {
+        
+        int allSum = 0, n = A.size(), F = 0;
+        
+        for(int i = 0; i < n; ++i){
+            F = F + i * A[i];
+            allSum += A[i];
+        }
+        
+        int res = F;
+        for(int i = n - 1; i >= 1; --i){
+            F = F + allSum - n * A[i];
+            res = max(res, F);
+        }
+        return res;
+
+    }
+};
+
+
 class Solution {
 public:
     void rotate(vector<int>& A){
